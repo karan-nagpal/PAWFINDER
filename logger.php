@@ -4,7 +4,7 @@
     
 
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
     
     $cmd = "select ownid , name from owners where ( email = '".$email."' OR  mobile = '".$email."' ) AND (status = '1' AND pwd = '".$password."')";
    
@@ -15,7 +15,7 @@
         $row = mysqli_fetch_array($data2);
         $_SESSION['aid'] = $row['ownid'];
         $_SESSION['aname'] = $row['name'];
-        header('location:dashboard.php');
+         header('location:dashboard.php');
 
     }else{
         // echo mysqli_error($conn);

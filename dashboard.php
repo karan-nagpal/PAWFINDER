@@ -1,17 +1,19 @@
 <?php
-session_start();
+ session_start();
 include('dbconnect.php');
-include('user-header.php');
 if(!isset($_SESSION["aid"])){
     header('location:login.php');
 }else{
     $id = $_SESSION["aid"];
 }
+include('user-header.php');
 ?>
-<h3 class="col-md-offset-1">Welcome <?php echo strtoupper($_SESSION['aname']) ;?></h3>
+<h3 class="col-md-offset-1" style="margin-left:20px">Welcome <?php echo strtoupper($_SESSION['aname']) ;?></h3>
 <div class="col-md-12">
+    <div class="col-md-2">
 
-    <?php include('user-navigation.php'); ?>
+        <?php include('user-navigation.php'); ?>
+    </div>
     
 <div class="col-md-9 text-center">
         <h1>Welcome to User Dashboard</h1>
@@ -25,10 +27,12 @@ if(!isset($_SESSION["aid"])){
         $numrow = mysqli_num_rows($data);
 
         
-        ?><p><?php
+        ?><p ><?php
         
-        if($numrow = 0){
-            echo "No data Found";
+        if($numrow ==  0){
+            echo "
+            No Pet  Added yet
+            ";
         }else{
             while($row = mysqli_fetch_array($data)){
                 ?>

@@ -1,5 +1,5 @@
 
-<div class="col-md-2 userbt">
+<div class="navbar-collapse  userbt  collapse" id ="menu2">
 <a href="dashboard.php" class= "btn bgnav">Dashboard</a>
     <a href="addpets.php" class= "btn bgnav">Add Pets</a>
     <a href="viewpets.php" class= "btn bgnav">My Pets</a>

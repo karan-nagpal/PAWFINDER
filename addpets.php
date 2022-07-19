@@ -1,19 +1,22 @@
 <?php
 SESSION_START();
 include('dbconnect.php');
-include('user-header.php');
 if(!isset($_SESSION["aid"])){
     header('location:login.php');
 }else{
     $id = $_SESSION["aid"];      
 }
+include('user-header.php');
 
 ?>
 
 <h3 class="col-md-offset-1">Welcome <?php echo strtoupper($_SESSION['aname']) ;?></h3>
 
 <div class="col-md-12">
-<?php include('user-navigation.php'); ?>
+    <div class="col-md-2">
+
+        <?php include('user-navigation.php'); ?>
+    </div>
     <div class="col-md-4 col-md-offset-3 text-center " > 
         <h1>Add new pet</h1>   
         <form action="addp.php" class="addform" method="post" enctype="multipart/form-data">

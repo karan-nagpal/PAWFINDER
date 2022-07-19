@@ -1,17 +1,18 @@
 <?php
 SESSION_START();
 include('dbconnect.php');
-include('user-header.php');
 if(!isset($_SESSION["aid"])){
     header('location:login.php');
 }else{
     $id = $_SESSION["aid"];
 }
+include('user-header.php');
 ?>
 <h3 class="col-md-offset-1">Welcome <?php echo strtoupper($_SESSION['aname']) ;?></h3>
+<div class="col-md-2">
 
-<?php include('user-navigation.php');  ?>
-
+<?php include('user-navigation.php'); ?>
+</div>
 <div class="col-md-7 text-center col-md-offset-2 "style="overflow: scroll; height:500px">
     <h2>My Pets</h2>
 <?php
@@ -21,9 +22,9 @@ if(!isset($_SESSION["aid"])){
     
     
 ?><p><?php
-
-    if($numrow = 0){
-        echo "No data Found";
+   
+    if($numrow == 0){
+        echo "No Pets Added yet <a href= 'addpets.php' a>Add pet here </a>";
     }else{
         $en =0;
         $fn =0;

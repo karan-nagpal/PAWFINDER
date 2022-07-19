@@ -13,6 +13,6 @@ $cmd = "delete from pets where pid = '".$petid."'";
 mysqli_query($conn, $cmd);
 $cmdqr = "delete from qrcode where pid = '".$petid."'";
 mysqli_query($conn, $cmdqr);
-header('location:addpets.php');
+header('location:viewpets.php');
 // echo mysqli_error($conn);
 ?>

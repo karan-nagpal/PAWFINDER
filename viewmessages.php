@@ -1,17 +1,20 @@
 <?php
 SESSION_START();
 include('dbconnect.php');
-include('user-header.php');
 if(!isset($_SESSION["aid"])){
     header('location:login.php');
 }else{
     $id = $_SESSION["aid"];
 }
+include('user-header.php');
 ?>
 
 <h3 class="col-md-offset-1">Welcome <?php echo strtoupper($_SESSION['aname']) ;?></h3>
 <div class="col-md-12">
+<div class="col-md-2">
+
 <?php include('user-navigation.php'); ?>
+</div>
     <div class="col-md-9 text-center">
         
         
@@ -35,7 +38,7 @@ if(!isset($_SESSION["aid"])){
 
         if($numrow1 <= 0){ ?>
             <tr>
-                <td><?php echo $numrow1; ?></td>
+                <td></td>
                 <td></td>
              <td>
                  <?php echo "No messages"; ?>
