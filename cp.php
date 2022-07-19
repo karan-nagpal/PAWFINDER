@@ -17,13 +17,13 @@ if(!isset($_SESSION["aid"])){
     <div class="col-md-4 col-md-offset-3 text-center " > 
         <h1>Add new pet</h1>   
         <form action="cpd.php" class="addform" method="post" onsubmit = "return regcheck()">
-        <input type="password" name="password" id="repass" placeholder="PET name" required>
-        <input type="password" id="repass" placeholder="PET name" required>
+        <input type="password" name="password" id="pass" placeholder="Enter new Password" required>
+        <input type="password" id="repass" placeholder="Enter Password again" required>
         <input type="submit" class ="btn btn-success" Value="Change Password">
         <p class="text-center">
     <?php
 if(isset($_GET['added'])){
-    echo "Pet added succesfuly";
+    echo "Password changed succesfully";
 } ?>
 </p>
 </form>

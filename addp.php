@@ -1,7 +1,7 @@
 <?php
 SESSION_START();
 include('dbconnect.php');
-include('user-header.php');
+
 if(!isset($_SESSION['aid'])){
     header('location:login.php');
 }
@@ -18,7 +18,7 @@ $newpic = date('dmyhis').$pic;
 $ownid  = $_SESSION['aid'];
 
 
-$cmd = "insert into pets(pname, pbreed, category, date, time, image, ownid, identification, petage) values('".$pname."','".$pbreed."','".$pcat."','".$date."','".$time."','".$newpic."','".$ownid."','".$idmark."','".$petage."')";
+$cmd = "insert into pets(pname, pbreed, category, date, time, image, ownid, identification, petage, status) values('".$pname."','".$pbreed."','".$pcat."','".$date."','".$time."','".$newpic."','".$ownid."','".$idmark."','".$petage."', '0')";
 
 $status = mysqli_query($conn, $cmd);
 if($status){

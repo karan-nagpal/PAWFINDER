@@ -21,11 +21,11 @@ if(!$status){
     header('location:error.php');
 }
 $url = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=http://192.168.86.98/pawfinder/scanqr.php?id=$petid";
-
 $qr = file_get_contents($url);
 header('Content-Type: image/png');
-file_put_contents(QRcodes. '/'.$qri.'.jpg', $qr);
+file_put_contents('QRcodes'. '/'.$qri.'.jpg', $url);
 header('location:addpets.php?added');
+
 }else{
     header('location:error.php');
 }

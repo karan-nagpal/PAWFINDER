@@ -53,7 +53,7 @@ if(!isset($_SESSION["aid"])){
                          <?php if($row['status']==0){
                               ?>
                                 
-                          <p><span onclick = "delquery(this)" id="e<?php echo $en; ?>" class="btn text-danger" >Report Lost</span><span class="text-danger btn" href="delpet.php?pid=<?php echo $row['pid']; ?>" onclick="return confirm('Are you sure?  Once deleted it can not be reversed.')">Delete</span></p>
+                          <p><span onclick = "delquery(this)" id="e<?php echo $en; ?>" class="btn text-danger" >Report Lost</span><a class="text-danger btn" href="delpet.php?pid=<?php echo $row['pid']; ?>" onclick="return confirm('Are you sure?  Once deleted it can not be reversed.')">Delete</a></p>
                           <div id="f<?php echo $fn; ?>" style= "display: none;">      
                                 <form action="reportlost.php" >
                                     <input type="hidden" value="<?php echo $row['pid']; ?>" name="pid" >
@@ -63,7 +63,7 @@ if(!isset($_SESSION["aid"])){
                                 </div>                       
                             <?php
                          }else{?>
-                            <p><span onclick = "foundquery(this)" id="h<?php echo $en; ?>" class="btn text-danger" >Report Found</span><span class="text-danger btn" href="delpet.php?pid=<?php echo $row['pid']; ?>" onclick="return confirm('Are you sure?  Once deleted it can not be reversed.')">Delete</span> <span class= " btn btn-warning"href="flyer.php">Print Flyers</span></p>
+                            <p><span onclick = "foundquery(this)" id="h<?php echo $en; ?>" class="btn text-danger" >Report Found</span><a class="text-danger btn" href="delpet.php?pid=<?php echo $row['pid']; ?>" onclick="return confirm('Are you sure?  Once deleted it can not be reversed.')">Delete</a> <a class= " btn btn-warning"href="flyer.php">Print Flyers</a></p>
                             <div id="l<?php echo $ln; ?>" style= "display: none;">      
                                 <form action="reportfound.php" >
                                     <input type="hidden" value="<?php echo $row['pid']; ?>" name="pid" >
